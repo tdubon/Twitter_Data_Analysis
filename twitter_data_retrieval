@@ -10,7 +10,7 @@ import yaml
 
 #function to read in YAML file
 def process_yaml():
-    with open("/Users/tdubon/Desktop/twitter-market/config.yaml") as file:
+    with open("config.yaml") as file:
         return yaml.safe_load(file)
      
 #access bearer token
