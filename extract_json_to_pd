@@ -1,0 +1,80 @@
+
+____________________________________________________#EXTRACTING JSON DATA
+import json
+import datetime
+import pandas as pd
+import numpy
+from datetime import datetime, date
+
+
+#read file back in
+with open("/Users/tdubon/Desktop/twitter-market/pol_tweet_data.json", "r") as f:
+    read_content = json.load(f)
+
+type(read_content)
+
+
+    
+#define functions   
+def get_id():
+    data_access = read_content["documents"]
+    for data in data_access:
+        id_record = data["id"]
+        id_data.append(id_record)
+
+def get_created_at():
+    date_access = read_content["documents"]
+    for data in data_access:
+        date_record = data["created_at"]
+        date_data.append(date_record)
+   
+
+def retweet_count():
+    data = read_content["documents"]
+    for retweets in data:
+        rtwt_count=retweets["public_metrics"]["retweet_count"] 
+        rtwt_data.append(rtwt_count)
+
+def reply_count():
+    data = read_content["documents"]
+    for reply in data:
+        reply_count = reply["public_metrics"]["reply_count"]
+        reply_data.append(reply_count)
+
+def get_text():
+    data_access = read_content["documents"]
+    for data in data_access:
+        text_record = data["text"]
+        text_data.append(text_record)
+
+
+#_____________________________________initialize lists, def and run main()
+id_data = []
+date_data = [] 
+rtwt_data = []
+reply_data = []
+text_data = []
+
+def main():
+    get_id() 
+    get_created_at() 
+    retweet_count()
+    reply_count() 
+    get_text() 
+
+   
+if __name__ == "__main__":
+    main()
+
+main()
+
+______________________________________#save list to dataframe
+save_data = {"id": id_data, "date": date_data, "retweet count": rtwt_data, "reply count": reply_data, "text": text_data}
+df = pd.DataFrame(save_data)
+df.columns
+df.head()
+ #df.to_csv("pol_tweet_data.csv")
+
+#day = datetime.strptime(df[date_data], "%Y-%m-%dT%H:%M:%S.%fZ")
+#date = df[date_data].__format__('%Y-%m-%d')
+
