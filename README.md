@@ -8,6 +8,7 @@ Use this worksheet to update the query and conduct your own research!
 # Setup
 1. Get your own token to the Twitter API at: 
 https://developer.twitter.com/en/portal/petition/essential/basic-info
+(If you don't have Jupyter Notebooks, the instructions to download it from your terminal are here: https://jupyter.org/install)
 
 2. Once created, save your bearer token to a plain text file, with a .yaml extension:
 BEARER_TOKEN: "replace text with your token here"
