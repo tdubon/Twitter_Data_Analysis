@@ -1,8 +1,9 @@
 # Sentiment Analysis
 
 # Introduction
-In this project, I explore English language tweets containing Putin, Lukashenka, Russia, Zelensky, Ukraine, Kyiv, Kharkiv, Chernihiv, Mykolaiv, or Mariupol.
-The tweet data is retrieved using the Twitter Developer Platform. Use this worksheet to update the query and conduct your own research!
+In this project, I explore English language tweets containing Putin, Lukashenka, Russia, Zelensky, Ukraine, Kyiv, Kharkiv, Chernihiv, Mykolaiv, or Mariupol.The tweet data is retrieved using the Twitter Developer Platform and spaCy models are used for natural language processesing. <br>
+
+Use this worksheet to update the query and conduct your own research!
 
 # Setup
 1. Get your own token to the Twitter API at: 
